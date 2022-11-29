@@ -1,6 +1,6 @@
 # Express
 
-Creating our first routes using Express.js
+Creating our first REST API using Node.js and Express.js
 
 ## Ressources
 
