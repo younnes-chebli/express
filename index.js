@@ -1,13 +1,16 @@
-//express
+import { users } from "./data/users.js";
 import express from "express";
 const app = express();
 const PORT = 3001;
 
-//SERVER
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Hiii");
+});
+
 app.get("/users", (req, res) => {
-    res.json(users);
+    res.send(users);
 });
 
 app.listen(PORT, () => {
