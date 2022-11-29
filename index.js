@@ -1,10 +1,27 @@
+//dotenv
 import * as dotenv from "dotenv";
 dotenv.config();
 const PG_PW = process.env.PG_PW;
+//express
+import express from "express";
+const app = express();
+const PORT = 3001;
+//postgress
 import { users } from "./users.js";
-
 import pg from "pg";
 
+//SERVER
+app.use(express.json());
+
+app.get("/", (req, res) => {
+    res.send("Hiii");
+});
+
+app.listen(PORT, () => {
+    console.log(`Hey server is running on port ${PORT}`);
+});
+
+//DATABASE
 const client = new pg.Client({
     host: "localhost",
     user: "first_app_admin",
@@ -50,6 +67,6 @@ const getUsers = async() => {
     }
 }
 
-createUsersTable();
-populateUsersTable();
-getUsers();
+// createUsersTable();
+// populateUsersTable();
+// getUsers();
