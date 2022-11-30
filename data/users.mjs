@@ -1048,12 +1048,5 @@ export const users = [
       lastName: 'Erington',
       email: 'cerington45@ebay.co.uk',
       ip: '56.176.30.62',
-    },
-    {
-      id: 151,
-      firstName: 'todelete',
-      lastName: 'todelete',
-      email: 'cerington45@ebay.co.uk',
-      ip: '56.176.30.62',
     }
   ]
