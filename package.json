@@ -2,11 +2,10 @@
   "name": "express",
   "version": "1.0.0",
   "description": "Creating our first app using Node.js and node-postgress library",
-  "main": "index.js",
-  "type": "module",
+  "main": "index.mjs",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node index.mjs",
+    "dev": "nodemon index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

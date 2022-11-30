@@ -1,11 +1,11 @@
 import express from "express";
 const app = express();
 const PORT = 3001;
-import defaultRouter from "./routes/defaultRoute.js";
-import getUsersRouter from "./routes/getUsers.js";
-import getUserRouter from "./routes/getUser.js";
-import addUserRouter from "./routes/addUser.js";
-import editUserRouter from "./routes/editUser.js";
+import defaultRouter from "./routes/defaultRoute.mjs";
+import getUsersRouter from "./routes/getUsers.mjs";
+import getUserRouter from "./routes/getUser.mjs";
+import addUserRouter from "./routes/addUser.mjs";
+import editUserRouter from "./routes/editUser.mjs";
 
 app.use(express.json());
 
