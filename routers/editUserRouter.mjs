@@ -1,9 +1,9 @@
 import express from "express";
 import { users } from "../data/users.mjs";
 
-const router = express.Router();
+const editUserRouter = express.Router();
 
-router.patch("/user/:id", (req, res) => {
+editUserRouter.patch("/user/:id", (req, res) => {
     const userId = Number(req.params.id);
     const user = users.find(user =>
         user.id === userId
@@ -18,4 +18,4 @@ router.patch("/user/:id", (req, res) => {
     res.send(users);
 });
 
-export default router;
+export default editUserRouter;

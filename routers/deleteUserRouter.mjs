@@ -1,9 +1,9 @@
 import express from "express";
 import { users } from "../data/users.mjs";
 
-const router = express.Router();
+const deleteUserRouter = express.Router();
 
-router.delete("/user/:id", (req, res) => {
+deleteUserRouter.delete("/user/:id", (req, res) => {
     const id = Number(req.params.id);
     const user = users.find(user =>
         user.id === id
@@ -14,4 +14,4 @@ router.delete("/user/:id", (req, res) => {
     res.send(users);
 });
 
-export default router;
+export default deleteUserRouter;

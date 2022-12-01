@@ -1,14 +1,17 @@
 import express from "express";
 const app = express();
 const PORT = 3001;
-import defaultRouter from "./routes/defaultRoute.mjs";
-import getUsersRouter from "./routes/getUsers.mjs";
-import getUserRouter from "./routes/getUser.mjs";
-import addUserRouter from "./routes/addUser.mjs";
-import editUserRouter from "./routes/editUser.mjs";
-import deleteUserRouter from "./routes/deleteUser.mjs";
+import dbConnection from "./database/connection.mjs";
+import defaultRouter from "./routers/defaultRouter.mjs";
+import getUsersRouter from "./routers/getUsersRouter.mjs";
+import getUserRouter from "./routers/getUserRouter.mjs";
+import addUserRouter from "./routers/addUserRouter.mjs";
+import editUserRouter from "./routers/editUserRouter.mjs";
+import deleteUserRouter from "./routers/deleteUserRouter.mjs";
 
 app.use(express.json());
+
+dbConnection();
 
 app.use(defaultRouter);
 
@@ -23,5 +26,5 @@ app.use(editUserRouter);
 app.use(deleteUserRouter);
 
 app.listen(PORT, () => {
-    console.log(`Hey server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
