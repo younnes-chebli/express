@@ -1,20 +1,13 @@
 import express from "express";
-import { users } from "../data/users.mjs";
+import { addUser } from "../database/database.mjs";
 
 const router = express.Router();
 
-router.post("/user", (req, res) => {
-    const { id, firstName, lastName, email, ip } = req.body;
+router.post("/user", async (req, res) => {
 
-    users.push({
-        id: id,
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        ip: ip
-    });
+    await addUser(req.body);
 
-    res.send(users);
+    res.send(req.body);
 });
 
 export default router;

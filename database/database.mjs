@@ -16,7 +16,7 @@ const client = new pg.Client({
 const dbConnection = async () => {
     try {
         await client.connect();
-        console.log(`Connected to ${client.database}`);
+        console.log(`Connected to database ${client.database}`);
     } catch(err) {
         console.log(err.message);
     }    
@@ -25,7 +25,7 @@ const dbConnection = async () => {
 const dbDisconnection = async () => {
     try {
         await client.end();
-        console.log(`Disconnected from ${client.database}`);
+        console.log(`Disconnected from database ${client.database}`);
     } catch(err) {
         console.log(err.message);
     }    
@@ -62,17 +62,24 @@ const getUsers = async () => {
 }
 
 export const getUser = async (id) => {
-    await dbConnection();
     try {
         const res = await client.query(`SELECT * FROM users where id = ${id}`);
         return res.rows[0];
     } catch(err) {
         console.log(err.message);
-    } finally {
-        await dbDisconnection();
     }
 }
 
+export const addUser = async (user) => {
+    const { firstName, lastName, email, ip} = user;
+    try {
+        await client.query("INSERT INTO users (firstname, lastname, email, ip) values ($1, $2, $3, $4)", [firstName, lastName, email, ip]);
+    } catch(err) {
+        console.log(err.message);
+    }
+}
+
+dbConnection();
 // createUsersTable();
 // populateUsersTable();
 // getUsers();
