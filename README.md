@@ -1,10 +1,3 @@
 # Express
 
-Creating our first REST API using Node.js, Express.js and PostgreSql (+ node-postgress library).
-
-## Ressources
-
-[https://nodejs.org/en/](https://nodejs.org/en/)__
-[https://expressjs.com/](https://expressjs.com/)__
-[https://www.postgresql.org/](https://www.postgresql.org/)__
-[https://node-postgres.com/](https://node-postgres.com/)__
+Creating our first REST API using [Node.js](https://nodejs.org/en/), [Express.js](https://expressjs.com/) and [PostgreSql](https://www.postgresql.org/) (+ [node-postgress library](https://node-postgres.com/)).
