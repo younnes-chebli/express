@@ -1,16 +1,13 @@
 import express from "express";
-import { users } from "../data/users.mjs";
+import deleteUser from "../database/queries/deleteUser.mjs";
+import getUsers from "../database/queries/getUsers.mjs";
 
 const deleteUserRouter = express.Router();
 
-deleteUserRouter.delete("/user/:id", (req, res) => {
-    const id = Number(req.params.id);
-    const user = users.find(user =>
-        user.id === id
-    );
-
-    users.splice(user.id - 1, 1);
-
+deleteUserRouter.delete("/user/:id", async (req, res) => {
+    const id = req.params.id;
+    await deleteUser(id);
+    const users = await getUsers(id);
     res.send(users);
 });
 
