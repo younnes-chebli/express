@@ -6,7 +6,7 @@ import defaultRouter from "./routers/defaultRouter.mjs";
 import getUsersRouter from "./routers/getUsersRouter.mjs";
 import getUserRouter from "./routers/getUserRouter.mjs";
 import addUserRouter from "./routers/addUserRouter.mjs";
-import editUserRouter from "./routers/editUserRouter.mjs";
+import updateUserRouter from "./routers/updateUserRouter.mjs";
 import deleteUserRouter from "./routers/deleteUserRouter.mjs";
 
 app.use(express.json());
@@ -21,7 +21,7 @@ app.use(getUserRouter);
 
 app.use(addUserRouter);
 
-app.use(editUserRouter);
+app.use(updateUserRouter);
 
 app.use(deleteUserRouter);
 
